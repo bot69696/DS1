@@ -1,0 +1,17 @@
+Aim: Working of Pig with Hadoop
+In Hue → click Main Menu → Files, Click New → Directory → name it pig.
+Inside pig directory, click New → File → name it pig_wordcount.txt. OR
+> pig 
+> input1 = load '/user/cloudera/pig/pig_wordcount.txt' AS (f1:chararray);
+dump input1;
+> eachlineword = FOREACH input1 GENERATE FLATTEN(TOKENIZE(f1)) AS word;
+>dump eachlineword;
+> groupwords = GROUP eachlineword BY word; >dump groupwords;
+> countwords = FOREACH groupwords GENERATE group, COUNT(eachlineword);
+>dump countwords;
+
+ANOTHER WAY TO CREATE TXT FILE ON TERMINAL: >pig -x local
+>cd~
+>mkdir pig
+>cd pig
+>nano pig_wordcount.txt
