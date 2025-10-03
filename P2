@@ -1,0 +1,8 @@
+Aim: Working of Hive in Hadoop (Part 1):
+> hive >show databases; >create database khalsa; >use khalsa;
+> create table student(id int,name string,gender string,age int,mobn int) row format delimited
+fields terminated by '\t'; or ',';
+>show tables; > describe student; > describe formatted student;
+*Create a file(table seperated by comma accordingly) in your /home/cloudera name stdtinfo*
+>load data local inpath '/home/cloudera/stdninfo' into table student;
+> select * from student; also > select name, age from student where age > 22;
