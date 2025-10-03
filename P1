@@ -4,5 +4,7 @@ anything
 >ls > pwd > cat WordCountdata > hdfs dfs -ls / > hdfs dfs -mkdir /inputfolder1
 > hdfs dfs -put /home/cloudera/WordCountdata /inputfolder1
 > hdfs dfs -cat /inputfolder1/WordCountdata
->hadoop jar /home/cloudera/WordCount.jar/WordCount /inputfolder1/WordCountdata /out1
+>hadoop jar /home/cloudera/WordCount.jar WordCount /inputfolder1/WordCountdata /out1
 > hdfs dfs -ls /out1 > hdfs dfs -cat /out1/part-r-00000
+
+JAVA DATA FROM APACHE WORD COUNT PROGRAM ON WEBSITE.
