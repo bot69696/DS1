@@ -1,0 +1,17 @@
+Aim: Join in Hive Hadoop
+*Create 2 file one name customer and second name order*
+*For customer: id, name, age, address, salary and for order: id, name, quantity, price*
+>hive >create database jointsdemo; >use jointsdemo;
+>create table customer(id int,name string,age int,address string,salary string)
+row format delimited fields terminated by ',';
+>create table order(id int,name string,quantity int,price int) row format delimited
+fields terminated by ',';
+>load data local inpath '/home/cloudera/customer' into table customer;
+>load data local inpath '/home/cloudera/order' into table order;
+>select * from customer; >select * from order;
+>select c.id, c.name, c.address, o.name, o.price from customer c join order o on (c.id = o.id);
+Or > in place of on write O where C.id=O.id;
+More query:
+select c.id, c.name, o.name, o.price from customer c left join order o on (c.id = o.id);
+select c.id, c.name, o.name, o.price from customer c right join order o on (c.id = o.id);
+select c.id, c.name, o.name, o.price from customer c full outer join order o on (c.id = o.id);
