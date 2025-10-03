@@ -1,0 +1,11 @@
+Aim: Hive queries, including filtering rows with WHERE and creating a VIEW.
+*Create a file by id,name,post,salary by space in your /home/clodera name empdata*
+> hive > use khalsa;
+> create table emp_data(id int,name string,post string,salary int) row format delimited
+fields terminated by '\t';
+> load data local inpath '/home/cloudera/empdata' into table emp_data;
+>select * from emp_data;
+>select * from emp_data where salary > 50000;
+>select * from emp_data where salary < 20000;
+> create view emp_view as select id, name, post from emp_data;
+> select * from emp_view;
